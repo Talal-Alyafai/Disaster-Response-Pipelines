@@ -38,7 +38,3 @@ I applied the data pipeline skills learned to analyze disaster data from Figure 
 - exports the final model as a pickle file
 
 `run.py`: A Flask Web App that visualizes the results
-
-### Licensing, Authors, Acknowledgements<a name="licensing"></a>
-
-Must give credit to Figure Eight for the data.

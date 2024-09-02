@@ -4,9 +4,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 def load_data(messages_filepath, categories_filepath):
-    
     '''
-
     Load messages and categories dataset and merge the two datasets
 
     Parameters:
@@ -15,7 +13,6 @@ def load_data(messages_filepath, categories_filepath):
 
     Returns:
     df: a dataframe that merges the two datasets
-
     '''
     # load messages dataset
     messages = pd.read_csv(messages_filepath)
@@ -29,9 +26,7 @@ def load_data(messages_filepath, categories_filepath):
     return df
 
 def clean_data(df):
-
     '''
-    
     Clean the dataframe
 
     Parameters:
@@ -39,11 +34,10 @@ def clean_data(df):
 
     Returns:
     df: cleaned dataframe
-
     '''
 
     # create a dataframe of the 36 individual category columns
-    categories = df.categories.str.split(';', expand=True)
+    categories = df['categories'].str.split(';', expand=True)
     
     # select the first row of the categories dataframe
     row = categories.iloc[0]
@@ -58,10 +52,10 @@ def clean_data(df):
     
     for column in categories:
         # set each value to be the last character of the string
-        categories[column] = categories[column].apply(lambda x: x[-1:])
+        categories[column] = categories[column].str[-1].astype(int)
 
-        # convert column from string to numeric
-        categories[column] = pd.to_numeric(categories[column])
+    # Drop rows where any category column has a value of 2
+    categories = categories[~(categories == 2).any(axis=1)]
     
     # drop the original categories column from 'df'
     df.drop('categories', axis=1, inplace=True)
@@ -74,7 +68,6 @@ def clean_data(df):
 
     return df
 
-
 def save_data(df, database_filename):
     ''' Save the data (df) to database (database_filename) '''
     engine = create_engine('sqlite:///{}'.format(database_filename))
@@ -83,7 +76,6 @@ def save_data(df, database_filename):
 
 def main():
     '''
-
     Main function that process the datasets
 
     Parameters:
@@ -93,7 +85,6 @@ def main():
 
     Returns:
     None
-
     '''
     if len(sys.argv) == 4:
 

@@ -4,8 +4,8 @@ I applied the data pipeline skills learned to analyze disaster data from Figure 
 
 ### Table of Contents
 
-1.  Project Overview
-2.  Importance and Impact
+1.  [Project Overview](#ProjectOverview)
+2.  [Importance and Impact](#ImportanceAndImpact)
 3.  [Instructions](#instructions)
 4. [File Descriptions](#files)
 5. [Licensing, Authors, and Acknowledgements](#licensing)

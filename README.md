@@ -4,9 +4,20 @@ I applied the data pipeline skills learned to analyze disaster data from Figure 
 
 ### Table of Contents
 
-1. [Instructions](#instructions)
-2. [File Descriptions](#files)
-3. [Licensing, Authors, and Acknowledgements](#licensing)
+1.  Project Overview
+2.  Importance and Impact
+3.  [Instructions](#instructions)
+4. [File Descriptions](#files)
+5. [Licensing, Authors, and Acknowledgements](#licensing)
+
+# Project Overview
+This project is designed to support emergency operators during disasters, such as earthquakes or tsunamis, by providing a web application that classifies disaster-related text messages into various categories. The application uses a machine learning (ML) model to automatically categorize incoming messages, ensuring that each message is directed to the appropriate response team or entity.
+
+# Importance and Impact
+During a disaster, communication channels are often overwhelmed with a high volume of distress messages. This application plays a crucial role in streamlining the response process by quickly and accurately categorizing messages based on the specific needs they communicate, such as requests for medical aid, search and rescue, or supplies. By automating this process, the application helps emergency responders prioritize tasks more efficiently, ensuring that critical resources are allocated where they are needed most.
+
+For instance, in the aftermath of a natural disaster, the app can instantly classify messages from affected individuals, allowing response teams to immediately focus on life-saving operations. This not only speeds up the response time but also reduces the chances of human error in manual message sorting, potentially saving lives and reducing the impact of the disaster on the affected population.
+
 
 ### Instructions:<a name="instructions"></a>
 1. Run the following commands in the project's root directory to set up your database and model.
